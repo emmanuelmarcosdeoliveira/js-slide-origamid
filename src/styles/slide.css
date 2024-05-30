@@ -1,9 +1,3 @@
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 ul {
   margin: 0;
 }
@@ -40,8 +34,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 64px;
+  margin: 24px;
 }
 :is(.prev, .next) {
   padding-inline: 12px;
@@ -50,10 +44,21 @@ ul {
   background-color: #fb5;
   color: #222;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 :is(.prev, .next):hover {
-  background-color: rgb(255, 164, 27);
+  cursor: pointer;
+}
+
+.arrow-nav button {
+  color: aliceblue;
+  background: rgb(255, 164, 27) url("../../assets/arrow.svg") center center
+    no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.arrow-nav button.prev {
+  transform: rotate(-180deg);
 }
 
 [data-control="slide"] {
@@ -75,4 +80,33 @@ ul {
 [data-control="slide"] li.active a,
 [data-control="slide"] li a:hover {
   background-color: #e54;
+}
+
+.custom-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-controls li {
+  opacity: 0.8;
+  transform: scale(0.8);
+  width: 68px;
+  height: 68px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.custom-controls li.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide li img:nth-child(5) {
+  transform: rotate(180deg);
 }
