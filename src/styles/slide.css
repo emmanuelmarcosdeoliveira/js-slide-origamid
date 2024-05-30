@@ -30,3 +30,23 @@ ul {
   opacity: 1;
   transform: scale(1);
 }
+.arrow-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+:is(.prev, .next) {
+  padding-inline: 12px;
+  padding-block: 6px;
+  border: none;
+  background-color: #fb5;
+  color: #222;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+:is(.prev, .next):hover {
+  background-color: rgb(255, 164, 27);
+}
